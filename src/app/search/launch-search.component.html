@@ -1,0 +1,51 @@
+<br>
+<div class="row">
+  <div class="col-12">
+    <h4>How to use:</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <p>
+      You can enter any query to match on rocket type, rocket ID, rocket name, launch site type, launch site id,
+      launch site name, and launch details. You can also enter multiple formats of dates to match on launch dates, and
+      numbers to match on launch number as well as any values contained in details. Searching for things like "success",
+      "succeed", "failure", "fail", "succeeded", and "failed" will not only search for these terms within the details,
+      but also check launches' success statuses. Click the result's launch number header to view a detail page with more
+      information including links to videos, news articles, and images.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="input-group">
+      <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="Search Launches">
+      <button class="btn btn-default input-group-append" (click)="searchLaunches(searchTerm)"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-header">
+    Search Results:
+  </div>
+  <div class="card-body">
+    <div class="row" *ngFor="let launch of displayedCollection">
+      <div class="col-sm-12">
+        <a routerLink="/SpaceXLaunchDetail/{{launch.FlightNumber}}"><b>Launch Number: {{launch.FlightNumber}}</b></a>
+      </div>
+      <div class="col-12 text-truncate">
+        {{launch.Details != null ? launch.Details : 'No details provided.'}}
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="col-xs-12 col-12">
+      <pagination class="float-right pagination-sm" [totalItems]="launches.length" [(ngModel)]="currentPage" [maxSize]="5"
+                  [boundaryLinks]="true" [rotate]="false" [itemsPerPage]="itemsPerPage" (pageChanged)="pageChanged($event)"
+                  previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"></pagination>
+    </div>
+  </div>
+</div>

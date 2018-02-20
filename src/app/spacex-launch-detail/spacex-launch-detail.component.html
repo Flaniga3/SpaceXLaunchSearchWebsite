@@ -1,0 +1,51 @@
+<br>
+<div class="card" *ngIf="Launch">
+  <div class="card-header">
+    <b>Flight Number: {{Launch.FlightNumber}}</b>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <b>Details: </b><span>{{Launch.Details ? Launch.Details : 'None'}}</span>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <b>Location: </b><span>{{Launch.LaunchSite.SiteNameLong}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <b>Launch Date UTC: </b><span>{{Launch.LaunchUtcDateTime}}</span>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <b>Launch Date Local: </b><span>{{Launch.LaunchLocalDateTime}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <b>Rocket Name: </b><span>{{Launch.Rocket.Name}}</span>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <b>Rocket Type: </b><span>{{Launch.Rocket.Type}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <b>Successful? </b><span>{{Launch.LaunchSuccess ? 'Yes' : 'No'}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <b>Links:</b>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <ul>
+          <li *ngFor="let link of Links">
+            <a href="{{link}}">{{link}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

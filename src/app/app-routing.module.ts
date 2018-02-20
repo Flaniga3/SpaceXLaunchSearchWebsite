@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LaunchSearchComponent } from './search/launch-search.component';
+import { LaunchSearchComponent } from './launch-search/launch-search.component';
 import { SpacexLaunchDetailComponent } from "./spacex-launch-detail/spacex-launch-detail.component"
 
 const routes: Routes = [

@@ -32,7 +32,7 @@
   <div class="card-body">
     <div class="row" *ngFor="let launch of displayedCollection">
       <div class="col-sm-12">
-        <a routerLink="/SpaceXLaunchDetail/{{launch.FlightNumber}}"><b>Launch Number: {{launch.FlightNumber}}</b></a>
+        <a routerLink="/SpaceXLaunchDetail/{{launch.FlightNumber}}"><b>Flight Number: {{launch.FlightNumber}}</b></a>
       </div>
       <div class="col-12 text-truncate">
         {{launch.Details != null ? launch.Details : 'No details provided.'}}

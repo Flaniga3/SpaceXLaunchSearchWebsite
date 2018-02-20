@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome';
 import { AppComponent } from './app.component';
-import { LaunchSearchComponent } from './search/launch-search.component';
+import { LaunchSearchComponent } from './launch-search/launch-search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PaginationModule } from 'ngx-bootstrap';
